@@ -13,29 +13,23 @@ public class Main {
                 new User("Harry", 15),
                 new User("Tom", 16),
                 new User("David", 19),
-                new User("Mariia", 28),
-                new User("Rachel", 21),
-                new User("Monica", 29),
+                new User("Mariia", 38),
+                new User("Rachel", 33),
+                new User("Monica", 39),
                 new User("Joey", 23),
                 new User("Chandler", 22),
                 new User("Emma", 31),
                 new User("Rose", 18)
 
         );
-        System.out.println("Sorted users: ");
+        System.out.println("Sorted users under 30 years old: ");
 
         List<User> sorted = users.stream()
+                .filter(user -> user.getAge() < 30)
                 .sorted(Comparator.comparing(User::getName))
                 .collect(Collectors.toList());
         sorted.stream().forEach(x -> System.out.println(x.getName()));
 
-        System.out.println("\nUsers under the age of 20: ");
-
-
-        List<User> youngPeople = users.stream()
-                .filter(user -> user.getAge() < 20)
-                .collect(Collectors.toList());
-        youngPeople.stream().forEach(x -> System.out.println(x.getName()+ " - " + x.getAge() + " years"));
 
     }
 }
