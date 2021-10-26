@@ -1,0 +1,4 @@
+com\testServlets\bl\ContactsBlService.class
+com\testServlets\servlet\ContactsServlet.class
+com\testServlets\servlet\SimpleServlet.class
+com\testServlets\bl\ConnectToDB.class
